@@ -28,7 +28,7 @@ export default function createStore<Shape>(initialState: Shape) {
       useSyncExternalStore(
         subscribe,
         () => selector(currentState),
-        () => selector(serverState ?? initialState)
+        () => selector(getServerState)
       ),
   };
 }
